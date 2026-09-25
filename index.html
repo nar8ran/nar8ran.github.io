@@ -29,7 +29,10 @@
            文字を変える  → span の中身（同じ内容を2つ並べると途切れずに流れます）
            速さを変える  → style.css の .trow--1 …の animation 秒数 -->
       <section class="hero" id="hero" aria-hidden="true">
-        <div class="hero__rows">
+        <!-- メインビジュアル（差し替えるときは images/ の別ファイルを指定） -->
+        <img class="hero__art" src="images/hero-welcome.png" alt="" />
+
+        <div class="hero__rows is-hidden">
           <div class="trow trow--1">
             <div class="trow__track">
               <span>Illustration &nbsp;✦&nbsp; Character Design &nbsp;✦&nbsp;</span>

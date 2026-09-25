@@ -780,18 +780,29 @@ textarea.field {
   to { transform: translateX(-50%); }
 }
 
-/* あとでイラストを置きたくなったとき用 */
+/* メインビジュアル（切れないよう全体を表示し、ゆっくり呼吸させる） */
 .hero__art {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  padding: 4vmin;
+  animation: artBreath 12s ease-in-out infinite;
+}
+@keyframes artBreath {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.035); }
+}
+/* 横長の画面では、切らずに大きく見せる */
+@media (max-width: 767px) {
+  .hero__art { padding: 2vmin; }
 }
 
 /* 動きを減らす設定の人には静止して見せる */
 @media (prefers-reduced-motion: reduce) {
-  .hero, .trow__track {
+  .hero, .trow__track, .hero__art {
     animation: none;
   }
 }
