@@ -459,9 +459,11 @@ button {
 }
 .card__title {
   font-size: 0.875rem;
+  line-height: 1.5;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 .card__cat {
   flex-shrink: 0;

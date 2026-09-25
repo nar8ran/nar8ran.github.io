@@ -10,9 +10,12 @@ audio/
 source/
 
 # 動画は Live2D(L2D) と ANI のものを公開対象にする（それ以外は圧縮後に追加）
+# MVはYouTube埋め込みに変更したため、YouTube未掲載の2本だけ公開対象にする
 movie/*
 !movie/L2D*.mp4
 !movie/ANI*.mp4
+!movie/mv-happy.mp4
+!movie/mv-yoreisai.mp4
 
 # 別プロジェクト（このポートフォリオには含めない）
 cyber-nurse/
