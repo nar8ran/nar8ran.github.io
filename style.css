@@ -703,13 +703,16 @@ textarea.field {
   animation: heroFlow 18s ease-in-out infinite;
 }
 @media (min-width: 768px) {
+  .home {
+    align-items: center; /* 画像を縦の中央に置く */
+  }
   .hero {
-    /* 画像と同じ比率にして、切れずにぴったり収める */
-    height: 100vh;
-    min-height: 100vh;
+    /* 画像と同じ比率のまま、切れず・大きくなりすぎずに収める */
+    flex: 1 1 auto;
+    height: auto;
+    min-height: 0;
     aspect-ratio: 2000 / 1258;
-    flex: 0 0 auto;
-    max-width: calc(100% - 15rem); /* サイドバーの最小幅を確保 */
+    max-height: 100vh;
   }
 }
 @keyframes heroFlow {
