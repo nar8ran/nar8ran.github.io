@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=202609260404" />
+    <link rel="stylesheet" href="style.css?v=202609260415" />
   </head>
   <body>
     <header class="site-header">
@@ -35,18 +35,20 @@
         </div>
       </div>
 
-      <!--
-        ▼ 実際にメールを受け取る方法（どちらか）
-        1) フォームサービス「Formspree」を使う（おすすめ・無料枠あり）
-           → <form> タグを次のように変更してください：
-             <form class="form" id="contact-form"
-                   action="https://formspree.io/f/【あなたのID】" method="POST">
-             （この場合、送信は Formspree 経由で実際にメールが届きます）
-        2) メールソフトを起動する mailto を使う
-           → 送信ボタンのリンク先を mailto:you@example.com にする 等
-        ※ 今はJSで簡易バリデーション＋完了メッセージのみ表示します（送信はされません）。
-      -->
-      <form class="form" id="contact-form" novalidate>
+      <!-- お問い合わせフォーム（Formspree 経由で naro.create@gmail.com に届きます）
+           送信先を変えるときは <form> の action の ID を差し替えてください。
+           送信履歴は https://formspree.io/ にログインすると確認できます。 -->
+      <form
+        class="form"
+        id="contact-form"
+        action="https://formspree.io/f/mbglapbd"
+        method="POST"
+        novalidate
+      >
+        <!-- 届くメールの件名 -->
+        <input type="hidden" name="_subject" value="ポートフォリオサイトからのお問い合わせ" />
+        <!-- 迷惑メール対策（人には見えない項目。botが入力すると弾かれます） -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="is-hidden" />
         <div class="banner banner--error is-hidden" id="form-error">
           入力内容をご確認ください。
         </div>
@@ -108,9 +110,9 @@
         </div>
 
         <div class="field-row">
-          <label for="files">添付資料</label>
+          <label for="reference">参考資料のURL</label>
           <div>
-            <input class="field-file" id="files" name="files" type="file" multiple />
+            <input class="field" id="reference" name="reference" type="text" placeholder="Googleドライブ・pixiv などのURL（任意）" />
           </div>
         </div>
 
@@ -163,6 +165,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=202609260404"></script>
+    <script src="script.js?v=202609260415"></script>
   </body>
 </html>

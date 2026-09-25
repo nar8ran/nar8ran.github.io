@@ -74,17 +74,56 @@
       }
       if (banner) banner.classList.add("is-hidden");
 
-      // Formspree等（action属性）が設定されていれば、通常どおり送信させる
-      if (usingService) return;
-
-      // 未設定のときは、その場で完了メッセージを表示（実際の送信はされません）
-      e.preventDefault();
-      form.classList.add("is-hidden");
       const thanks = document.getElementById("thanks");
-      if (thanks) {
-        thanks.classList.remove("is-hidden");
-        thanks.scrollIntoView({ behavior: "smooth", block: "center" });
+      const showThanks = () => {
+        form.classList.add("is-hidden");
+        if (thanks) {
+          thanks.classList.remove("is-hidden");
+          thanks.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      };
+
+      // 送信先が未設定なら、その場で完了メッセージだけ表示（実送信なし）
+      if (!usingService) {
+        e.preventDefault();
+        showThanks();
+        return;
       }
+
+      // 送信先がある場合は、ページを移動せずその場で送信する
+      e.preventDefault();
+      const button = form.querySelector('button[type="submit"]');
+      const label = button ? button.textContent : "";
+      if (button) {
+        button.disabled = true;
+        button.textContent = "送信中…";
+      }
+
+      fetch(usingService, {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      })
+        .then((res) => {
+          if (res.ok) {
+            showThanks();
+            return;
+          }
+          throw new Error("送信に失敗しました");
+        })
+        .catch(() => {
+          if (banner) {
+            banner.textContent =
+              "送信できませんでした。通信環境をご確認のうえ、もう一度お試しください。何度も失敗する場合は naro.create@gmail.com までご連絡ください。";
+            banner.classList.remove("is-hidden");
+          }
+        })
+        .finally(() => {
+          if (button) {
+            button.disabled = false;
+            button.textContent = label;
+          }
+        });
     });
   }
 
