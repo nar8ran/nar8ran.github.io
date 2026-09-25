@@ -19,26 +19,21 @@
   </head>
   <body>
     <main class="home bg-paper">
-      <!-- ============ ヒーロー（動画・ランダム切り替え） ============ -->
-      <!-- 動画を増やす/変えるときは <video class="hero__slide"> を増減し、
-           src を movie/ 内のファイル名に。muted playsinline は自動再生に必要です。
-           （音を鳴らす自動再生はブラウザ側で禁止されているため muted 必須） -->
-      <section class="hero" id="hero">
-        <video
-          class="hero__slide is-active"
-          src="movie/L2DIdol.mp4"
-          autoplay
-          muted
-          playsinline
-          preload="auto"
-        ></video>
-        <video
-          class="hero__slide"
-          src="movie/L2Dkemo.mp4"
-          muted
-          playsinline
-          preload="metadata"
-        ></video>
+      <!-- ============ ヒーロー（CSSアニメーション・無限ループ） ============
+           画像や動画は使っていません。色は style.css の :root、
+           動きは style.css の「ヒーロー」セクションで調整できます。
+           あとでイラストを入れたい場合は、この <section> の中に
+           <img class="hero__art" src="images/xxx.png" alt="" /> を足せばOKです。 -->
+      <section class="hero" id="hero" aria-hidden="true">
+        <span class="orb orb--1"></span>
+        <span class="orb orb--2"></span>
+        <span class="orb orb--3"></span>
+        <span class="orb orb--4"></span>
+        <span class="ring ring--1"></span>
+        <span class="ring ring--2"></span>
+        <span class="twinkle twinkle--1">✦</span>
+        <span class="twinkle twinkle--2">✧</span>
+        <span class="twinkle twinkle--3">✦</span>
       </section>
 
       <!-- ============ 右サイドのナビ ============ -->

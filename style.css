@@ -683,13 +683,23 @@ textarea.field {
   }
 }
 
+/* ---------- ヒーロー（CSSアニメーション・無限ループ） ----------
+   ゆっくり流れるグラデーション ＋ 漂う光の粒 ＋ 回る輪。
+   速さを変えたいときは、各 animation の秒数を大きく／小さくしてください。 */
 .hero {
   position: relative;
   width: 100%;
   min-height: 52vh;
   overflow: hidden;
-  /* 読み込み中・レターボックスの隙間用のフォールバック背景 */
-  background: linear-gradient(135deg, var(--sage-soft), var(--cream) 55%, var(--blush-soft));
+  background: linear-gradient(
+    120deg,
+    var(--sage-soft) 0%,
+    var(--cream) 38%,
+    var(--blush-soft) 68%,
+    var(--sage-soft) 100%
+  );
+  background-size: 260% 260%;
+  animation: heroFlow 28s ease-in-out infinite;
 }
 @media (min-width: 768px) {
   .hero {
@@ -697,92 +707,180 @@ textarea.field {
     min-height: 100vh;
   }
 }
-.hero__slide {
+/* 画面の端をやわらかく締める光 */
+.hero::after {
+  content: "";
   position: absolute;
   inset: 0;
-  opacity: 0;
-  transition: opacity 1.2s ease-in-out;
+  background: radial-gradient(
+    120% 90% at 50% 40%,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0) 55%
+  );
+  pointer-events: none;
 }
-.hero__slide.is-active {
-  opacity: 1;
+
+@keyframes heroFlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
-video.hero__slide {
+
+/* 漂う光の粒 */
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(46px);
+  will-change: transform;
+}
+.orb--1 {
+  width: 42vmin;
+  height: 42vmin;
+  left: -8%;
+  top: 6%;
+  background: radial-gradient(circle at 35% 35%, rgba(166, 204, 180, 0.95), rgba(166, 204, 180, 0));
+  animation: drift-a 26s ease-in-out infinite;
+}
+.orb--2 {
+  width: 34vmin;
+  height: 34vmin;
+  right: -4%;
+  top: 22%;
+  background: radial-gradient(circle at 40% 40%, rgba(243, 198, 201, 0.95), rgba(243, 198, 201, 0));
+  animation: drift-b 32s ease-in-out infinite;
+}
+.orb--3 {
+  width: 30vmin;
+  height: 30vmin;
+  left: 28%;
+  bottom: -6%;
+  background: radial-gradient(circle at 45% 45%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  animation: drift-c 22s ease-in-out infinite;
+}
+.orb--4 {
+  width: 24vmin;
+  height: 24vmin;
+  right: 26%;
+  bottom: 12%;
+  background: radial-gradient(circle at 40% 40%, rgba(219, 146, 154, 0.55), rgba(219, 146, 154, 0));
+  animation: drift-b 38s ease-in-out infinite reverse;
+}
+
+@keyframes drift-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(12%, 10%) scale(1.12);
+  }
+}
+@keyframes drift-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-14%, 8%) scale(0.92);
+  }
+}
+@keyframes drift-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(8%, -12%) scale(1.08);
+  }
+}
+
+/* ゆっくり回る輪 */
+.ring {
+  position: absolute;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+.ring--1 {
+  width: 58vmin;
+  height: 38vmin;
+  right: 6%;
+  top: 16%;
+  animation: spin 46s linear infinite;
+}
+.ring--2 {
+  width: 40vmin;
+  height: 26vmin;
+  left: 8%;
+  bottom: 14%;
+  border-color: rgba(95, 157, 124, 0.28);
+  animation: spin 64s linear infinite reverse;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* きらきら */
+.twinkle {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+  animation: twinkle 5s ease-in-out infinite;
+}
+.twinkle--1 {
+  left: 24%;
+  top: 30%;
+}
+.twinkle--2 {
+  right: 30%;
+  top: 22%;
+  font-size: 0.9rem;
+  animation-delay: 1.6s;
+}
+.twinkle--3 {
+  left: 46%;
+  bottom: 24%;
+  font-size: 1.3rem;
+  animation-delay: 3.2s;
+}
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* あとでイラストを置きたくなったとき用 */
+.hero__art {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.hero__slide--1 {
-  background: linear-gradient(135deg, var(--sage-soft), var(--cream) 55%, var(--blush-soft));
-}
-.hero__slide--2 {
-  background: linear-gradient(135deg, var(--blush-soft), var(--cream) 55%, var(--sage-soft));
-}
-.hero__slide--3 {
-  background: linear-gradient(135deg, rgba(166, 204, 180, 0.45), var(--sage-soft) 60%, var(--cream));
-}
-.hero__slide--4 {
-  background: linear-gradient(135deg, rgba(243, 198, 201, 0.4), var(--blush-soft) 60%, var(--cream));
-}
-.hero__blob {
-  position: absolute;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.4);
-  filter: blur(40px);
-}
-.hero__blob--1 {
-  left: 18%;
-  top: 24%;
-  width: 6rem;
-  height: 6rem;
-}
-.hero__blob--2 {
-  right: 22%;
-  top: 52%;
-  width: 10rem;
-  height: 10rem;
-  background: rgba(255, 255, 255, 0.35);
-}
-.hero__deco {
-  position: absolute;
-  color: rgba(255, 255, 255, 0.6);
-}
-.hero__deco--star {
-  bottom: 18%;
-  left: 42%;
-  font-size: 1.5rem;
-}
-.hero__deco--heart {
-  right: 28%;
-  top: 28%;
-  font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-.hero__caption {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 0.4rem 1rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.02em;
-  color: rgba(64, 56, 47, 0.55);
-  backdrop-filter: blur(4px);
-}
-@media (min-width: 640px) {
-  .hero__caption {
-    bottom: 2rem;
-    left: 2rem;
+
+/* 動きを減らす設定の人には静止して見せる */
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .orb,
+  .ring,
+  .twinkle {
+    animation: none;
   }
-}
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--sage-deep);
 }
 
 .home-side {

@@ -9,64 +9,6 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  /* ---- トップ：ヒーローのランダム切り替え ---- */
-  const hero = document.getElementById("hero");
-  if (hero) {
-    const slides = Array.from(hero.querySelectorAll(".hero__slide"));
-
-    if (slides.length > 0) {
-      const isVideo = slides[0].tagName === "VIDEO";
-      let current = Math.floor(Math.random() * slides.length);
-      slides.forEach((s, i) => s.classList.toggle("is-active", i === current));
-
-      // 別のスライドをランダムに選ぶ
-      const pickNext = () => {
-        if (slides.length < 2) return current;
-        let n = Math.floor(Math.random() * (slides.length - 1));
-        if (n >= current) n += 1;
-        return n;
-      };
-
-      if (isVideo) {
-        const playCurrent = () => {
-          const v = slides[current];
-          try {
-            v.currentTime = 0;
-          } catch (e) {}
-          const p = v.play();
-          if (p && p.catch) p.catch(() => {});
-        };
-
-        if (slides.length === 1) {
-          slides[0].loop = true; // 1本だけならループ
-          playCurrent();
-        } else {
-          // 再生が終わったら、別の動画へランダムに切り替え
-          slides.forEach((v) => {
-            v.loop = false;
-            v.addEventListener("ended", () => {
-              const next = pickNext();
-              slides[current].classList.remove("is-active");
-              slides[current].pause();
-              current = next;
-              slides[current].classList.add("is-active");
-              playCurrent();
-            });
-          });
-          playCurrent();
-        }
-      } else {
-        // 動画でない場合（グラデーション等）はタイマーで切り替え
-        setInterval(() => {
-          const next = pickNext();
-          slides[current].classList.remove("is-active");
-          slides[next].classList.add("is-active");
-          current = next;
-        }, 4500);
-      }
-    }
-  }
-
   /* ---- Works：カテゴリ絞り込み ---- */
   const tabs = document.getElementById("tabs");
   const grid = document.getElementById("works-grid");

@@ -9,11 +9,8 @@
 audio/
 source/
 
-# Works の動画はすべて YouTube 埋め込みに移行済み。
-# 公開するのは index.html のトップ背景で使う2本だけ。
-movie/*
-!movie/L2DIdol.mp4
-!movie/L2Dkemo.mp4
+# 動画はすべて YouTube 埋め込み／CSSアニメーションに移行済み（サイト内に動画ファイルなし）
+movie/
 
 # 別プロジェクト（このポートフォリオには含めない）
 cyber-nurse/
