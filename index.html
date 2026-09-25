@@ -24,35 +24,41 @@
            動きは style.css の「ヒーロー」セクションで調整できます。
            あとでイラストを入れたい場合は、この <section> の中に
            <img class="hero__art" src="images/xxx.png" alt="" /> を足せばOKです。 -->
+      <!-- 文字だけのループアニメーション。
+           行を増やす/減らす → .trow を複製・削除
+           文字を変える  → span の中身（同じ内容を2つ並べると途切れずに流れます）
+           速さを変える  → style.css の .trow--1 …の animation 秒数 -->
       <section class="hero" id="hero" aria-hidden="true">
-        <!-- 背景で漂う光 -->
-        <span class="orb orb--1"></span>
-        <span class="orb orb--2"></span>
-        <span class="orb orb--3"></span>
-        <span class="orb orb--4"></span>
-
-        <!-- 中央の回る輪と、その軌道をめぐる粒 -->
-        <span class="ring ring--1"></span>
-        <span class="ring ring--2"></span>
-        <span class="ring ring--dash"></span>
-        <span class="orbit orbit--1"><i class="satellite satellite--sage"></i></span>
-        <span class="orbit orbit--2"><i class="satellite satellite--blush"></i></span>
-        <span class="orbit orbit--3"><i class="satellite satellite--white"></i></span>
-
-        <!-- ふわふわ回る図形 -->
-        <span class="shape shape--circle"></span>
-        <span class="shape shape--tri"></span>
-        <span class="shape shape--square"></span>
-
-        <span class="twinkle twinkle--1">✦</span>
-        <span class="twinkle twinkle--2">✧</span>
-        <span class="twinkle twinkle--3">✦</span>
-
-        <!-- 流れる文字 -->
-        <div class="hero__ticker">
-          <div class="hero__ticker-track">
-            <span>Illustration ・ Live2D ・ Animation ・ Music ・ Design ・&nbsp;</span>
-            <span>Illustration ・ Live2D ・ Animation ・ Music ・ Design ・&nbsp;</span>
+        <div class="hero__rows">
+          <div class="trow trow--1">
+            <div class="trow__track">
+              <span>Illustration &nbsp;✦&nbsp; Character Design &nbsp;✦&nbsp;</span>
+              <span>Illustration &nbsp;✦&nbsp; Character Design &nbsp;✦&nbsp;</span>
+            </div>
+          </div>
+          <div class="trow trow--2">
+            <div class="trow__track">
+              <span>Live2D Modeling &nbsp;/&nbsp; Rigging &nbsp;/&nbsp;</span>
+              <span>Live2D Modeling &nbsp;/&nbsp; Rigging &nbsp;/&nbsp;</span>
+            </div>
+          </div>
+          <div class="trow trow--3">
+            <div class="trow__track">
+              <span>Animation &nbsp;✦&nbsp; Music &nbsp;✦&nbsp; Jingle &nbsp;✦&nbsp;</span>
+              <span>Animation &nbsp;✦&nbsp; Music &nbsp;✦&nbsp; Jingle &nbsp;✦&nbsp;</span>
+            </div>
+          </div>
+          <div class="trow trow--4">
+            <div class="trow__track">
+              <span>Logo &nbsp;/&nbsp; MV &nbsp;/&nbsp; Streaming Design &nbsp;/&nbsp;</span>
+              <span>Logo &nbsp;/&nbsp; MV &nbsp;/&nbsp; Streaming Design &nbsp;/&nbsp;</span>
+            </div>
+          </div>
+          <div class="trow trow--5">
+            <div class="trow__track">
+              <span>Multi Creator &nbsp;—&nbsp; なろ &nbsp;—&nbsp;</span>
+              <span>Multi Creator &nbsp;—&nbsp; なろ &nbsp;—&nbsp;</span>
+            </div>
           </div>
         </div>
       </section>
