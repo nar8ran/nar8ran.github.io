@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=202609260358" />
+    <link rel="stylesheet" href="style.css?v=202609260404" />
   </head>
   <body>
     <header class="site-header">
@@ -39,19 +39,19 @@
         <!-- カテゴリ切り替え（JSで絞り込み） -->
         <div class="tabs" id="tabs">
           <button class="tab active" data-filter="all">All</button>
-          <button class="tab" data-filter="original">Original</button>
-          <button class="tab" data-filter="vtuber">VTuber</button>
+          <button class="tab" data-filter="music">Music</button>
+          <button class="tab" data-filter="live2d">Live2D</button>
           <button class="tab" data-filter="other">Other Works</button>
         </div>
 
         <!--
           作品を追加するときは、この <article class="card"> … </article> を複製して
-          data-category を "original" / "vtuber" / "other" のいずれかにしてください。
+          data-category を "music" / "live2d" / "other" のいずれかにしてください。
           画像は <div class="card__media"> の中身を
           <img src="images/xxx.jpg" alt="作品名" /> に置き換えればOKです。
         -->
         <div class="grid-3" id="works-grid">
-          <article class="card" data-category="vtuber">
+          <article class="card" data-category="live2d">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/E3qz4unM4Dc" title="蛸壺みやび様 アイドル衣装 Live2Dモデル" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -60,7 +60,7 @@
               <span class="card__cat">Live2D</span>
             </div>
           </article>
-          <article class="card" data-category="vtuber">
+          <article class="card" data-category="live2d">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/fuJWtannCt0" title="蛸壺みやび様 夏衣装 Live2Dモデル" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -69,7 +69,7 @@
               <span class="card__cat">Live2D</span>
             </div>
           </article>
-          <article class="card" data-category="vtuber">
+          <article class="card" data-category="live2d">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/0f_KRLrzrqk" title="蛸壺みやび様 ケモノのすがた Live2Dモデル" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -78,7 +78,7 @@
               <span class="card__cat">Live2D</span>
             </div>
           </article>
-          <article class="card" data-category="vtuber">
+          <article class="card" data-category="live2d">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/cxGXK4LDjQ8" title="CHIHAYA様 Live2Dモデル" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -87,7 +87,7 @@
               <span class="card__cat">Live2D</span>
             </div>
           </article>
-          <article class="card" data-category="vtuber">
+          <article class="card" data-category="live2d">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/x1kDiykGFco" title="なにぬね ののの様 Live2Dモデル" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -96,7 +96,7 @@
               <span class="card__cat">Live2D</span>
             </div>
           </article>
-          <article class="card" data-category="vtuber">
+          <article class="card" data-category="live2d">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/MwsAKu2ghVo" title="ソウ・シロート様 Live2Dアニメーション" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -105,7 +105,7 @@
               <span class="card__cat">Animation</span>
             </div>
           </article>
-          <article class="card" data-category="vtuber">
+          <article class="card" data-category="live2d">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/N_lcqgrdNtQ" title="鮭乃むすび様 Live2Dアニメーション" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -118,7 +118,7 @@
           <!-- ===== 音楽制作（YouTube 埋め込み） =====
                動画を追加するときは iframe の src の最後（動画ID）を差し替えてください。
                例）https://www.youtube-nocookie.com/embed/【動画ID】 -->
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/QSfm2Lx61sU" title="ピックアップ！イメージBGM制作事例①" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -127,7 +127,7 @@
               <span class="card__cat">Music</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/E87YNlqDd3g" title="ピックアップ！イメージジングル制作事例①" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -136,7 +136,7 @@
               <span class="card__cat">Music</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/mKvYFzJq56k" title="Aether" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -145,7 +145,7 @@
               <span class="card__cat">BGM</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/Vgcrk4aOl9U" title="COTTONTAIL" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -154,7 +154,7 @@
               <span class="card__cat">BGM</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/3r3H6UJJRvs" title="BOOTING!!" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -163,7 +163,7 @@
               <span class="card__cat">BGM</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/3cUiigXxMgA" title="SETTING…" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -172,7 +172,7 @@
               <span class="card__cat">BGM</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/9yE1uQ32bFY" title="ひだまり喫茶きゃんべる" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -181,7 +181,7 @@
               <span class="card__cat">BGM</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/NPEihCd9_34" title="今日も喫茶店は大忙しなのだ！" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -190,7 +190,7 @@
               <span class="card__cat">BGM</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/KtU0ZHwRij8" title="ポッピンラビッツ" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -199,7 +199,7 @@
               <span class="card__cat">BGM</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/GuvlK_3PFBg" title="再開と終焉" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -208,7 +208,7 @@
               <span class="card__cat">BGM</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/82HxI8z38hE" title="サイバー×キャンディ" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -217,7 +217,7 @@
               <span class="card__cat">Jingle</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/HJm9uLfYtTc" title="EVOLUTION！" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -226,7 +226,7 @@
               <span class="card__cat">Jingle</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/28kFkpJ_OKU" title="邂逅" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -235,7 +235,7 @@
               <span class="card__cat">Jingle</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/US3AsN9_OKA" title="つみあげサンド" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -244,7 +244,7 @@
               <span class="card__cat">Jingle</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/ZUCmNFkudm0" title="潮に咲く" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -253,7 +253,7 @@
               <span class="card__cat">Jingle</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/jupKVkQivxA" title="禁断の果実" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -262,7 +262,7 @@
               <span class="card__cat">Jingle</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/ZATuoHmFJ9A" title="My Fleek Day" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -271,7 +271,7 @@
               <span class="card__cat">Jingle</span>
             </div>
           </article>
-          <article class="card" data-category="other">
+          <article class="card" data-category="music">
             <div class="card__media">
               <iframe src="https://www.youtube-nocookie.com/embed/buXUOMEJ5lE" title="晴る風" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -311,6 +311,6 @@
       <video class="modal__video" id="modal-video" controls playsinline></video>
     </div>
 
-    <script src="script.js?v=202609260358"></script>
+    <script src="script.js?v=202609260404"></script>
   </body>
 </html>
