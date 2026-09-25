@@ -707,12 +707,12 @@ textarea.field {
     align-items: center; /* 画像を縦の中央に置く */
   }
   .hero {
-    /* 画像と同じ比率のまま、切れず・大きくなりすぎずに収める */
-    flex: 1 1 auto;
+    /* 画像の比率のまま、画面の幅にも高さにも収まるサイズにする */
+    flex: 0 1 auto;
+    width: min(calc(100% - 15rem), calc(100vh * 2000 / 1258));
     height: auto;
     min-height: 0;
     aspect-ratio: 2000 / 1258;
-    max-height: 100vh;
   }
 }
 @keyframes heroFlow {
