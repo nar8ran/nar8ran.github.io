@@ -704,8 +704,12 @@ textarea.field {
 }
 @media (min-width: 768px) {
   .hero {
-    flex: 1;
+    /* 画像と同じ比率にして、切れずにぴったり収める */
+    height: 100vh;
     min-height: 100vh;
+    aspect-ratio: 2000 / 1258;
+    flex: 0 0 auto;
+    max-width: calc(100% - 15rem); /* サイドバーの最小幅を確保 */
   }
 }
 @keyframes heroFlow {
@@ -780,24 +784,14 @@ textarea.field {
   to { transform: translateX(-50%); }
 }
 
-/* メインビジュアル（切れないよう全体を表示し、ゆっくり呼吸させる） */
+/* メインビジュアル（余白なしでぴったり・動かさない） */
 .hero__art {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
-  padding: 4vmin;
-  animation: artBreath 12s ease-in-out infinite;
-}
-@keyframes artBreath {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.035); }
-}
-/* 横長の画面では、切らずに大きく見せる */
-@media (max-width: 767px) {
-  .hero__art { padding: 2vmin; }
 }
 
 /* 動きを減らす設定の人には静止して見せる */
@@ -817,13 +811,15 @@ textarea.field {
 }
 @media (min-width: 768px) {
   .home-side {
-    width: 20rem;
+    /* 画像の残り幅にぴったり合わせる */
+    width: auto;
+    flex: 1 1 auto;
+    min-width: 15rem;
     padding: 4rem 3rem;
   }
 }
 @media (min-width: 1024px) {
   .home-side {
-    width: 24rem;
     padding: 4rem 3.5rem;
   }
 }
