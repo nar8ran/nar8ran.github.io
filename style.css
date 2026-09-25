@@ -323,6 +323,12 @@ button {
     gap: 3.5rem;
   }
 }
+.profile__icon {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
 .profile__body {
   display: flex;
   flex-direction: column;
