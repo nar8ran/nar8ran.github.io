@@ -4,22 +4,25 @@
  * ================================================================= */
 
 :root {
-  --cream: #faf7f2; /* 背景（あたたかいオフホワイト） */
-  --surface: #ffffff;
-  --ink: #40382f; /* 文字（真っ黒より柔らかいブラウン寄り） */
-  --ink-soft: #a89e90; /* 補足テキスト */
-  --line: #ece5da; /* 罫線 */
+  /* ---- 配色：オレンジ〜イエロー〜クリーム（名刺と同じ系統）----
+     変数名の sage / blush は以前の名残ですが、
+     いまは「イエロー系」「ピーチ系」として使っています。 */
+  --cream: #fdf8ed; /* 背景（あたたかいクリーム） */
+  --surface: #fffdf6;
+  --ink: #6b5545; /* 文字（やわらかいブラウン） */
+  --ink-soft: #b7a494; /* 補足テキスト */
+  --line: #f0e4cf; /* 罫線 */
 
-  --sage: #a6ccb4; /* メインのやさしい緑 */
-  --sage-soft: #dcece0;
-  --sage-deep: #5f9d7c; /* リンク・強調 */
+  --sage: #f7cf5e; /* メインのイエロー */
+  --sage-soft: #fdf0cb; /* 面で使う淡いイエロー */
+  --sage-deep: #e08a2e; /* リンク・強調（濃いオレンジ） */
 
-  --orange: #f0983f; /* ホバー時の強調色（名刺と同じオレンジ系） */
-  --blush: #f3c6c9; /* 差し色の桜ピンク（可愛さ担当） */
-  --blush-soft: #fbe7e8;
-  --blush-deep: #db929a;
+  --orange: #f0983f; /* ホバー時の強調色 */
+  --blush: #f9c795; /* 差し色のピーチ */
+  --blush-soft: #fdeada;
+  --blush-deep: #e2793c;
 
-  --shadow-soft: 0 18px 40px -24px rgba(95, 82, 63, 0.35);
+  --shadow-soft: 0 18px 40px -24px rgba(120, 90, 50, 0.35);
   --serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --sans: "Zen Maru Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
     "Yu Gothic", Meiryo, sans-serif;
@@ -85,8 +88,8 @@ button {
 
 .bg-paper {
   background-image:
-    radial-gradient(circle at 20% 15%, rgba(166, 204, 180, 0.16), transparent 42%),
-    radial-gradient(circle at 85% 85%, rgba(243, 198, 201, 0.16), transparent 45%);
+    radial-gradient(circle at 20% 15%, rgba(247, 207, 94, 0.18), transparent 42%),
+    radial-gradient(circle at 85% 85%, rgba(249, 199, 149, 0.18), transparent 45%);
 }
 
 /* ---------- header ---------- */
@@ -274,10 +277,10 @@ button {
   font-weight: 500;
   letter-spacing: 0.02em;
   text-align: center;
-  background: linear-gradient(135deg, var(--sage-soft), rgba(166, 204, 180, 0.5));
+  background: linear-gradient(135deg, var(--sage-soft), rgba(247, 207, 94, 0.5));
 }
 .ph--blush {
-  background: linear-gradient(135deg, var(--blush-soft), rgba(243, 198, 201, 0.45));
+  background: linear-gradient(135deg, var(--blush-soft), rgba(249, 199, 149, 0.5));
 }
 .ph--mixed {
   background: linear-gradient(135deg, var(--sage-soft), var(--cream) 55%, var(--blush-soft));
@@ -434,7 +437,7 @@ button {
 }
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba(166, 204, 180, 0.6);
+  border-color: rgba(247, 207, 94, 0.6);
 }
 .card__media {
   position: relative;
@@ -511,7 +514,7 @@ button {
   height: 3rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 8px 20px -8px rgba(95, 82, 63, 0.6);
+  box-shadow: 0 8px 20px -8px rgba(120, 90, 50, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -631,7 +634,7 @@ button {
 }
 .field:focus {
   border-color: var(--sage);
-  box-shadow: 0 0 0 3px rgba(166, 204, 180, 0.3);
+  box-shadow: 0 0 0 3px rgba(247, 207, 94, 0.35);
 }
 textarea.field {
   resize: vertical;
@@ -654,7 +657,7 @@ textarea.field {
   transition: background 0.2s;
 }
 .field-file::file-selector-button:hover {
-  background: rgba(166, 204, 180, 0.4);
+  background: rgba(247, 207, 94, 0.45);
 }
 .field-error {
   margin-top: 0.4rem;
@@ -699,7 +702,7 @@ textarea.field {
   font-size: 0.875rem;
 }
 .banner--error {
-  border: 1px solid rgba(243, 198, 201, 0.6);
+  border: 1px solid rgba(249, 199, 149, 0.7);
   background: var(--blush-soft);
   color: var(--blush-deep);
 }
@@ -707,8 +710,8 @@ textarea.field {
   max-width: 42rem;
   margin-top: 3rem;
   border-radius: 1.5rem;
-  border: 1px solid rgba(166, 204, 180, 0.5);
-  background: rgba(220, 236, 224, 0.6);
+  border: 1px solid rgba(247, 207, 94, 0.5);
+  background: rgba(253, 240, 203, 0.7);
   padding: 2rem;
   text-align: center;
 }
@@ -1013,7 +1016,7 @@ textarea.field {
   max-height: 85vh;
   border-radius: 0.75rem;
   background: #000;
-  box-shadow: 0 30px 90px -30px rgba(95, 82, 63, 0.45);
+  box-shadow: 0 30px 90px -30px rgba(120, 90, 50, 0.45);
   opacity: 0;
   transform: scale(0.96);
   transition:
