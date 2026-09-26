@@ -156,7 +156,7 @@ button {
   width: 4px;
   height: 4px;
   border-radius: 999px;
-  background: var(--blush-deep);
+  background: var(--sage);
   transform: translateX(-50%);
 }
 
@@ -920,7 +920,7 @@ textarea.field {
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background: var(--blush-deep);
+  background: var(--sage);
   opacity: 0;
   transition: opacity 0.3s;
 }
