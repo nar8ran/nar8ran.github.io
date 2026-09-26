@@ -847,22 +847,15 @@ textarea.field {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  /* すりガラス越しのぼやけた状態から、ふわっと浮かび上がる */
-  animation: frostedIn 1.6s cubic-bezier(0.22, 0.68, 0.24, 1) both;
+  /* すりガラス越しのぼやけた状態から、ふわっと解像度が上がる */
+  animation: frostedIn 1.4s ease-out both;
 }
 @keyframes frostedIn {
   from {
-    opacity: 0;
-    filter: blur(22px) saturate(1.25);
-    transform: scale(1.06) translateY(14px);
-  }
-  60% {
-    opacity: 1;
+    filter: blur(14px);
   }
   to {
-    opacity: 1;
-    filter: blur(0) saturate(1);
-    transform: scale(1) translateY(0);
+    filter: blur(0);
   }
 }
 
