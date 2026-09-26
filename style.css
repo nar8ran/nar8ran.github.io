@@ -14,6 +14,7 @@
   --sage-soft: #dcece0;
   --sage-deep: #5f9d7c; /* リンク・強調 */
 
+  --orange: #f0983f; /* ホバー時の強調色（名刺と同じオレンジ系） */
   --blush: #f3c6c9; /* 差し色の桜ピンク（可愛さ担当） */
   --blush-soft: #fbe7e8;
   --blush-deep: #db929a;
@@ -117,7 +118,7 @@ button {
   transition: opacity 0.2s;
 }
 .brand:hover {
-  opacity: 0.7;
+  color: var(--orange);
 }
 .site-nav {
   display: flex;
@@ -139,7 +140,7 @@ button {
   transition: color 0.2s;
 }
 .site-nav a:hover {
-  color: var(--ink);
+  color: var(--orange);
 }
 .site-nav a.active {
   color: var(--sage-deep);
@@ -206,7 +207,7 @@ button {
   color: rgba(64, 56, 47, 0.7);
 }
 .social-nav a:hover {
-  color: var(--sage-deep);
+  color: var(--orange);
 }
 .copyright {
   font-size: 0.75rem;
@@ -555,7 +556,7 @@ button {
   }
 }
 .tab:hover {
-  color: var(--ink);
+  color: var(--orange);
 }
 .tab.active {
   color: var(--sage-deep);
@@ -909,7 +910,7 @@ textarea.field {
   transition: color 0.3s;
 }
 .home-nav a:hover {
-  color: var(--sage-deep);
+  color: var(--orange);
 }
 .home-nav a::before {
   content: "";
@@ -939,7 +940,7 @@ textarea.field {
   color: rgba(64, 56, 47, 0.75);
 }
 .home-links__list a:hover {
-  color: var(--sage-deep);
+  color: var(--orange);
 }
 .home-links__note {
   margin-top: 0.75rem;
