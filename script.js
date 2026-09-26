@@ -35,6 +35,22 @@
     });
   }
 
+  /* ---- YouTubeサムネイル：クリックで再生 ---- */
+  document.querySelectorAll(".ytlite").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.yt;
+      if (!id) return;
+      const frame = document.createElement("iframe");
+      frame.src =
+        "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+      frame.title = btn.getAttribute("aria-label") || "";
+      frame.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      frame.allowFullscreen = true;
+      btn.replaceWith(frame);
+    });
+  });
+
   /* ---- Contact：簡易バリデーション ---- */
   const form = document.getElementById("contact-form");
   if (form) {

@@ -479,6 +479,57 @@ button {
   color: var(--ink-soft);
 }
 
+/* YouTubeサムネイル（クリックで再生。普段はボタン類を出さない） */
+.ytlite {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: block;
+}
+.ytlite img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s;
+}
+.card:hover .ytlite img {
+  transform: scale(1.04);
+}
+.ytlite__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 8px 20px -8px rgba(95, 82, 63, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s, transform 0.25s, opacity 0.25s;
+  opacity: 0.85;
+}
+.ytlite__play::before {
+  content: "";
+  border-style: solid;
+  border-width: 0.5rem 0 0.5rem 0.85rem;
+  border-color: transparent transparent transparent var(--ink);
+  margin-left: 0.18rem;
+}
+.card:hover .ytlite__play {
+  background: #fff;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
 /* tabs */
 .tabs {
   margin-bottom: 2rem;
