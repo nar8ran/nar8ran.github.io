@@ -18,7 +18,8 @@
   --sage-deep: #e08a2e; /* リンク・強調（濃いオレンジ） */
 
   --yellow: #fbeb4e; /* 丸マークなどに使う、はっきりした黄色 */
-  --orange: #f0983f; /* ホバー時の強調色 */
+  --green: #cde39a; /* トップ画像の差し色の緑 */
+  --hover: #6f9438; /* ホバー時の色（上の緑を文字用に濃くしたもの） */
   --blush: #f9c795; /* 差し色のピーチ */
   --blush-soft: #fdeada;
   --blush-deep: #e2793c;
@@ -122,7 +123,7 @@ button {
   transition: opacity 0.2s;
 }
 .brand:hover {
-  color: var(--orange);
+  color: var(--hover);
 }
 .site-nav {
   display: flex;
@@ -144,7 +145,7 @@ button {
   transition: color 0.2s;
 }
 .site-nav a:hover {
-  color: var(--orange);
+  color: var(--hover);
 }
 .site-nav a.active {
   color: var(--sage-deep);
@@ -200,7 +201,7 @@ button {
   color: rgba(64, 56, 47, 0.7);
 }
 .social-nav a:hover {
-  color: var(--orange);
+  color: var(--hover);
 }
 .copyright {
   font-size: 0.75rem;
@@ -549,7 +550,7 @@ button {
   }
 }
 .tab:hover {
-  color: var(--orange);
+  color: var(--hover);
 }
 .tab.active {
   color: var(--sage-deep);
@@ -902,7 +903,7 @@ textarea.field {
   transition: color 0.3s;
 }
 .home-nav a:hover {
-  color: var(--orange);
+  color: var(--hover);
 }
 .home-links__label {
   font-size: 0.7rem;
@@ -920,7 +921,7 @@ textarea.field {
   color: rgba(64, 56, 47, 0.75);
 }
 .home-links__list a:hover {
-  color: var(--orange);
+  color: var(--hover);
 }
 .home-links__note {
   margin-top: 0.75rem;
