@@ -761,10 +761,10 @@ textarea.field {
   .hero {
     /* 画像の比率のまま、画面の幅にも高さにも収まるサイズにする */
     flex: 0 1 auto;
-    width: min(calc(100% - 15rem), calc(100vh * 3577 / 1341));
+    width: min(calc(100% - 15rem), calc(100vh * 1337 / 841));
     height: auto;
     min-height: 0;
-    aspect-ratio: 3577 / 1341;
+    aspect-ratio: 1337 / 841;
   }
 }
 @keyframes heroFlow {
