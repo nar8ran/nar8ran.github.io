@@ -18,8 +18,7 @@
   --sage-deep: #e08a2e; /* リンク・強調（濃いオレンジ） */
 
   --yellow: #fbeb4e; /* 丸マークなどに使う、はっきりした黄色 */
-  --green: #cde39a; /* トップ画像の差し色の緑 */
-  --hover: #93c24a; /* ホバー時の色（明るめの緑。薄くするなら #a8cf62 など） */
+  --hover: #f0983f; /* ホバー時の色（オレンジ） */
   --blush: #f9c795; /* 差し色のピーチ */
   --blush-soft: #fdeada;
   --blush-deep: #e2793c;
@@ -148,7 +147,7 @@ button {
   color: var(--hover);
 }
 .site-nav a.active {
-  color: var(--hover);
+  color: var(--sage-deep);
 }
 
 /* ---------- footer ---------- */
@@ -553,7 +552,7 @@ button {
   color: var(--hover);
 }
 .tab.active {
-  color: var(--hover);
+  color: var(--sage-deep);
 }
 .tab.active::after {
   content: "";
@@ -563,7 +562,7 @@ button {
   width: 100%;
   height: 2px;
   border-radius: 999px;
-  background: var(--hover);
+  background: var(--sage-deep);
 }
 .empty {
   padding-block: 4rem;
