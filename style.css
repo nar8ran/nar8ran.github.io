@@ -847,16 +847,6 @@ textarea.field {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  /* すりガラス越しのぼやけた状態から、ふわっと解像度が上がる */
-  animation: frostedIn 1.4s ease-out both;
-}
-@keyframes frostedIn {
-  from {
-    filter: blur(14px);
-  }
-  to {
-    filter: blur(0);
-  }
 }
 
 /* 右側のナビも、少し遅れて順番に浮かび上がる */
@@ -884,7 +874,6 @@ textarea.field {
 @media (prefers-reduced-motion: reduce) {
   .hero,
   .trow__track,
-  .hero__art,
   .home-brand,
   .home-nav a,
   .home-links {
