@@ -847,6 +847,23 @@ textarea.field {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  /* すりガラス越しのぼやけた状態から、ふわっと浮かび上がる */
+  animation: frostedIn 1.6s cubic-bezier(0.22, 0.68, 0.24, 1) both;
+}
+@keyframes frostedIn {
+  from {
+    opacity: 0;
+    filter: blur(22px) saturate(1.25);
+    transform: scale(1.06) translateY(14px);
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    filter: blur(0) saturate(1);
+    transform: scale(1) translateY(0);
+  }
 }
 
 /* 右側のナビも、少し遅れて順番に浮かび上がる */
@@ -874,6 +891,7 @@ textarea.field {
 @media (prefers-reduced-motion: reduce) {
   .hero,
   .trow__track,
+  .hero__art,
   .home-brand,
   .home-nav a,
   .home-links {
