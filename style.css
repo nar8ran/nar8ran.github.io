@@ -17,6 +17,7 @@
   --sage-soft: #fdf0cb; /* 面で使う淡いイエロー */
   --sage-deep: #e08a2e; /* リンク・強調（濃いオレンジ） */
 
+  --yellow: #fbeb4e; /* 丸マークなどに使う、はっきりした黄色 */
   --orange: #f0983f; /* ホバー時の強調色 */
   --blush: #f9c795; /* 差し色のピーチ */
   --blush-soft: #fdeada;
@@ -156,7 +157,7 @@ button {
   width: 4px;
   height: 4px;
   border-radius: 999px;
-  background: var(--sage);
+  background: var(--yellow);
   transform: translateX(-50%);
 }
 
@@ -920,7 +921,7 @@ textarea.field {
   width: 8px;
   height: 8px;
   border-radius: 999px;
-  background: var(--sage);
+  background: var(--yellow);
   opacity: 0;
   transition: opacity 0.3s;
 }
