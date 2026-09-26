@@ -847,8 +847,6 @@ textarea.field {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  /* 読み込み時にふわっと浮かび上がる */
-  animation: floatUp 1.1s cubic-bezier(0.22, 0.68, 0.24, 1) both;
 }
 
 /* 右側のナビも、少し遅れて順番に浮かび上がる */
@@ -876,7 +874,6 @@ textarea.field {
 @media (prefers-reduced-motion: reduce) {
   .hero,
   .trow__track,
-  .hero__art,
   .home-brand,
   .home-nav a,
   .home-links {
