@@ -35,66 +35,24 @@
     });
   }
 
-  /* ---- カードが1枚ずつふわっと現れる（トップの文字と同じ floatUp）----
-   * 画面に入ったカードだけを、入った順に少しずつずらして出します。
-   * 下の方のカードもスクロールして見えた瞬間に同じ動きで出ます。
+  /* ---- カードがふわっと現れる（トップの文字・見出しと同じ floatUp）----
+   * スクロールは関係なく、読み込み時に全部まとめて出します。
+   * 遅延は style.css の .card.is-shown 側（0.25秒）で見出しと揃えています。
    */
   const revealCards = document.querySelectorAll(".card");
   if (revealCards.length) {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    // 1枚を浮かび上がらせる（delay秒だけ待ってから）
-    const reveal = (card, delay) => {
-      card.style.animationDelay = delay + "s";
-      card.addEventListener(
-        "animationend",
-        () => {
-          card.style.animationDelay = "";
-          card.classList.add("is-done");
-        },
-        { once: true }
-      );
-      card.classList.add("is-shown");
-    };
-
-    if (reduce || !("IntersectionObserver" in window)) {
-      revealCards.forEach((card) => card.classList.add("is-done"));
-    } else {
-      const STEP = 0.08; // 1枚ずつずらす間隔（秒）
-      const LEAD = 0.25; // 最初のひと呼吸（トップの文字と同じ）
-      let batch = [];
-      let timer = 0;
-
-      // 同じタイミングで入ってきたカードをまとめて、順番に出す
-      const flush = () => {
-        batch
-          .sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top)
-          .forEach((card, i) => reveal(card, LEAD + i * STEP));
-        batch = [];
-      };
-
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            io.unobserve(entry.target);
-            batch.push(entry.target);
-          });
-          if (batch.length) {
-            window.clearTimeout(timer);
-            timer = window.setTimeout(flush, 30);
-          }
-        },
-        { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
-      );
-
-      // 最初の描画が終わってから見張り始める（出る瞬間を見逃さないように）
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          revealCards.forEach((card) => io.observe(card));
-        });
+    revealCards.forEach((card) => {
+      if (reduce) {
+        card.classList.add("is-done");
+        return;
+      }
+      // 出終わったらアニメーションを外して、ホバーの動きを効かせる
+      card.addEventListener("animationend", () => card.classList.add("is-done"), {
+        once: true,
       });
-    }
+      card.classList.add("is-shown");
+    });
   }
 
   /* ---- YouTubeサムネイル：クリックで再生 ---- */

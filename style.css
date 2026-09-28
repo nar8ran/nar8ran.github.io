@@ -419,8 +419,8 @@ button {
   opacity: 0;
 }
 .card.is-shown {
-  /* トップページの なろ / About / Works / Contact と同一の動き */
-  animation: floatUp 0.9s cubic-bezier(0.22, 0.68, 0.24, 1) both;
+  /* 見出し・トップの文字と同一の動き＆同一のタイミング */
+  animation: floatUp 0.9s cubic-bezier(0.22, 0.68, 0.24, 1) 0.25s both;
 }
 /* 出終わったらアニメーションを外して、ホバーの動きに戻す */
 .card.is-done {
