@@ -35,6 +35,33 @@
     });
   }
 
+  /* ---- カードが1枚ずつふわっと現れる ---- */
+  const cards = document.querySelectorAll(".card");
+  if (cards.length) {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduce || !("IntersectionObserver" in window)) {
+      // 動きを控える設定や古い環境では、すぐ表示する
+      cards.forEach((c) => c.classList.add("is-shown"));
+    } else {
+      const io = new IntersectionObserver(
+        (entries, obs) => {
+          // 同時に見えたカードは、少しずつ時間をずらして出す
+          let step = 0;
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            obs.unobserve(el);
+            window.setTimeout(() => el.classList.add("is-shown"), step * 90);
+            step += 1;
+          });
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+      );
+      cards.forEach((c) => io.observe(c));
+    }
+  }
+
   /* ---- YouTubeサムネイル：クリックで再生 ---- */
   document.querySelectorAll(".ytlite").forEach((btn) => {
     btn.addEventListener("click", () => {

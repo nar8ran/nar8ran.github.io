@@ -414,6 +414,34 @@ button {
   }
 }
 
+/* カードが1枚ずつふわっと現れる（画面に入ったタイミングで発動） */
+.card {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s cubic-bezier(0.22, 0.68, 0.24, 1),
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+.card.is-shown {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+/* JSが動かない環境では、最初から見えるようにしておく */
+.no-js .card {
+  opacity: 1;
+  transform: none;
+}
+/* 動きを減らす設定の人はそのまま表示 */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .card {
   position: relative;
   overflow: hidden;
@@ -425,7 +453,7 @@ button {
     transform 0.3s,
     border-color 0.3s;
 }
-.card:hover {
+.card.is-shown:hover {
   transform: translateY(-4px);
   border-color: rgba(247, 207, 94, 0.6);
 }
