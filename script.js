@@ -36,17 +36,20 @@
   }
 
   /* ---- カードがふわっと現れる（トップの文字・見出しと同じ floatUp）----
-   * スクロールは関係なく、読み込み時に全部まとめて出します。
-   * 遅延は style.css の .card.is-shown 側（0.25秒）で見出しと揃えています。
+   * スクロールは待たず、読み込み時に上から1枚ずつ順番に出します。
    */
   const revealCards = document.querySelectorAll(".card");
   if (revealCards.length) {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    revealCards.forEach((card) => {
+    const LEAD = 0.25; // 1枚目が出るまでのひと呼吸（見出しと同じ）
+    const STEP = 0.08; // 次のカードまでの間隔（ここを変えるとテンポが変わります）
+
+    revealCards.forEach((card, i) => {
       if (reduce) {
         card.classList.add("is-done");
         return;
       }
+      card.style.animationDelay = LEAD + i * STEP + "s";
       // 出終わったらアニメーションを外して、ホバーの動きを効かせる
       card.addEventListener("animationend", () => card.classList.add("is-done"), {
         once: true,
