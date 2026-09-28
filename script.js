@@ -35,16 +35,26 @@
     });
   }
 
-  /* ---- カードが1枚ずつふわっと現れる（読み込み時に順番に） ---- */
-  const cards = document.querySelectorAll(".card");
-  if (cards.length) {
+  /* ---- カードが1枚ずつふわっと現れる（トップの文字と同じ動き・読み込み時に順番に） ---- */
+  const revealCards = document.querySelectorAll(".card");
+  if (revealCards.length) {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    cards.forEach((card, i) => {
+    revealCards.forEach((card, i) => {
       if (reduce) {
-        card.classList.add("is-shown");
-      } else {
-        window.setTimeout(() => card.classList.add("is-shown"), 120 + i * 80);
+        card.classList.add("is-done");
+        return;
       }
+      // トップの文字と同じく、少し待ってから順番に浮かび上がる
+      card.style.animationDelay = 0.25 + i * 0.08 + "s";
+      card.addEventListener(
+        "animationend",
+        () => {
+          card.style.animationDelay = "";
+          card.classList.add("is-done");
+        },
+        { once: true }
+      );
+      card.classList.add("is-shown");
     });
   }
 

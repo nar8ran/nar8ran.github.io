@@ -414,31 +414,29 @@ button {
   }
 }
 
-/* カードが1枚ずつふわっと現れる（画面に入ったタイミングで発動） */
+/* カードが1枚ずつふわっと現れる（トップの文字と全く同じ floatUp を使う） */
 .card {
   opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.9s cubic-bezier(0.22, 0.68, 0.24, 1),
-    transform 0.9s cubic-bezier(0.22, 0.68, 0.24, 1),
-    border-color 0.3s,
-    box-shadow 0.3s;
 }
 .card.is-shown {
+  /* トップページの なろ / About / Works / Contact と同一の動き */
+  animation: floatUp 0.9s cubic-bezier(0.22, 0.68, 0.24, 1) both;
+}
+/* 出終わったらアニメーションを外して、ホバーの動きに戻す */
+.card.is-done {
+  animation: none;
   opacity: 1;
-  transform: translateY(0);
 }
 /* JSが動かない環境では、最初から見えるようにしておく */
 .no-js .card {
   opacity: 1;
-  transform: none;
+  animation: none;
 }
 /* 動きを減らす設定の人はそのまま表示 */
 @media (prefers-reduced-motion: reduce) {
   .card {
     opacity: 1;
-    transform: none;
-    transition: none;
+    animation: none;
   }
 }
 
@@ -453,7 +451,7 @@ button {
     transform 0.3s,
     border-color 0.3s;
 }
-.card.is-shown:hover {
+.card.is-done:hover {
   transform: translateY(-4px);
   border-color: rgba(247, 207, 94, 0.6);
 }
