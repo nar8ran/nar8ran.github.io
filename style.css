@@ -992,8 +992,9 @@ textarea.field {
       transform: translateY(0);
     }
   }
+  /* 見出しも、カードやトップの文字と全く同じ動き・同じタイミングで出す */
   .rise {
-    animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation: floatUp 0.9s cubic-bezier(0.22, 0.68, 0.24, 1) 0.25s both;
   }
   @keyframes float {
     0%,
