@@ -226,7 +226,7 @@ button {
 @media (min-width: 640px) {
   .page-head {
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center; /* 見出しの高さの真ん中に文を揃える */
     gap: 2rem;
   }
 }
@@ -248,7 +248,7 @@ button {
 }
 @media (min-width: 640px) {
   .page-head__sub {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0;
   }
 }
 .page-head__sub span {
