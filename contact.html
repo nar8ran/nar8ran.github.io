@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=202610071856" />
+    <link rel="stylesheet" href="style.css?v=202610071859" />
   </head>
   <body>
     <header class="site-header">
@@ -77,6 +77,21 @@
         </div>
 
         <div class="field-row">
+          <label for="genre">ご依頼の種類</label>
+          <div>
+            <select class="field" id="genre" name="genre">
+              <option value="未定・まだ決まっていない">未定・まだ決まっていない</option>
+              <option value="楽曲（BGM・ジングル）">楽曲（BGM・ジングル）</option>
+              <option value="Live2Dモデリング">Live2Dモデリング</option>
+              <option value="ロゴデザイン">ロゴデザイン</option>
+              <option value="配信画面デザイン">配信画面デザイン</option>
+              <option value="イラスト">イラスト</option>
+              <option value="その他・複数">その他・複数</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
           <label for="budget">ご予算 / 原稿料</label>
           <div>
             <input class="field" id="budget" name="budget" type="text" placeholder="例）〜50,000円 / 応相談" />
@@ -109,7 +124,7 @@
               id="message"
               name="message"
               rows="8"
-              placeholder="ご依頼・ご相談の内容をご記入ください。&#10;&#10;例）配信用のBGMをお願いしたいです。&#10;・ご依頼の種類：BGM／ジングル／Live2Dモデル／ロゴ／配信画面 など&#10;・イメージ：明るくポップ、ピアノ中心&#10;・使用用途：雑談配信のBGM&#10;・参考：気になる楽曲やデザインのURL（下の欄でも大丈夫です）"
+              placeholder="ご依頼・ご相談の内容をご記入ください。&#10;&#10;例）配信用のBGMをお願いしたいです。&#10;・イメージ：明るくポップ、ピアノ中心&#10;・使用用途：雑談配信のBGM&#10;・参考：気になる楽曲やデザインのURL（下の欄でも大丈夫です）"
             ></textarea>
             <p class="field-note">
               決まっていない項目は空欄でかまいません。「こういう雰囲気にしたい」だけでもご相談いただけます。<br />
@@ -175,6 +190,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=202610071856"></script>
+    <script src="script.js?v=202610071859"></script>
   </body>
 </html>
