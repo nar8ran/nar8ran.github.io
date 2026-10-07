@@ -560,6 +560,45 @@ button {
   border-bottom: 1px solid rgba(236, 229, 218, 0.7);
   padding-bottom: 1rem;
 }
+/* Musicタブのときだけ出す、全曲カタログ（Naro studio）への案内 */
+.catalog-link {
+  display: block;
+  margin: -0.5rem 0 2rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--sage-soft);
+  color: var(--ink);
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    transform 0.3s;
+}
+.catalog-link:hover {
+  border-color: rgba(247, 207, 94, 0.8);
+  background: var(--surface);
+  transform: translateY(-2px);
+}
+.catalog-link__title {
+  display: block;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.catalog-link__title::before {
+  content: "♪ ";
+  color: var(--sage-deep);
+}
+.catalog-link:hover .catalog-link__title {
+  color: var(--hover);
+}
+.catalog-link__note {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
 .tab {
   position: relative;
   background: none;

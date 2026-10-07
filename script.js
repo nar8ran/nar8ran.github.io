@@ -15,15 +15,12 @@
   if (tabs && grid) {
     const cards = Array.from(grid.querySelectorAll(".card"));
     const empty = document.getElementById("works-empty");
+    const catalog = document.getElementById("catalog-link");
 
-    tabs.addEventListener("click", (e) => {
-      const btn = e.target.closest(".tab");
-      if (!btn) return;
-
-      const filter = btn.dataset.filter;
+    const applyFilter = (filter) => {
       tabs
         .querySelectorAll(".tab")
-        .forEach((t) => t.classList.toggle("active", t === btn));
+        .forEach((t) => t.classList.toggle("active", t.dataset.filter === filter));
 
       let shown = 0;
       cards.forEach((card) => {
@@ -32,7 +29,25 @@
         if (match) shown += 1;
       });
       if (empty) empty.classList.toggle("is-hidden", shown > 0);
+      // 全曲カタログへの案内は Music を選んだときだけ出す
+      if (catalog) catalog.classList.toggle("is-hidden", filter !== "music");
+    };
+
+    tabs.addEventListener("click", (e) => {
+      const btn = e.target.closest(".tab");
+      if (!btn) return;
+      applyFilter(btn.dataset.filter);
+      // URLの末尾を書き換えて、そのまま共有できるようにする
+      const hash = btn.dataset.filter === "all" ? " " : "#" + btn.dataset.filter;
+      if (window.history.replaceState) {
+        window.history.replaceState(null, "", hash === " " ? location.pathname : hash);
+      }
     });
+
+    // works.html#music のように開いたときは、そのタブから始める
+    const fromHash = location.hash.replace("#", "");
+    const known = Array.from(tabs.querySelectorAll(".tab")).map((t) => t.dataset.filter);
+    applyFilter(known.includes(fromHash) ? fromHash : "all");
   }
 
   /* ---- カードがふわっと現れる（トップの文字・見出しと同じ floatUp）----
@@ -44,7 +59,10 @@
     const LEAD = 0.25; // 1枚目が出るまでのひと呼吸（見出しと同じ）
     const STEP = 0.08; // 次のカードまでの間隔（ここを変えるとテンポが変わります）
 
-    revealCards.forEach((card, i) => {
+    // 絞り込みで隠れているカードは順番から外す（#music で開いたとき用）
+    let i = -1;
+    revealCards.forEach((card) => {
+      if (!card.classList.contains("is-hidden")) i += 1;
       if (reduce) {
         card.classList.add("is-done");
         return;
