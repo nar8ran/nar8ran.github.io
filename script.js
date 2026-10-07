@@ -208,7 +208,8 @@
         e.preventDefault();
 
         const img = link.querySelector("img");
-        modalImage.src = link.getAttribute("href");
+        // data-zoom があれば、拡大時はそちらの画像を見せる
+        modalImage.src = link.dataset.zoom || link.getAttribute("href");
         modalImage.alt = img ? img.alt : "";
         modal.hidden = false;
         document.body.style.overflow = "hidden";
