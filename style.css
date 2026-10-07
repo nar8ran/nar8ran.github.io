@@ -452,13 +452,6 @@ button {
     grid-template-columns: 1.4fr 1fr;
     gap: 2.5rem;
   }
-  /* 2番目は左右を入れ替える。列の比率も一緒に反転させないと画像が縮む */
-  .pickup__item:nth-child(even) {
-    grid-template-columns: 1fr 1.4fr;
-  }
-  .pickup__item:nth-child(even) .pickup__media {
-    order: 2;
-  }
 }
 .pickup__media {
   position: relative;
