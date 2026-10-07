@@ -390,6 +390,23 @@ button {
   color: var(--ink-soft);
 }
 /* 話のまとまりごとに、少し間をあける */
+/* 入力欄の下に添える、小さな案内文 */
+.field-note {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1.8;
+  color: var(--ink-soft);
+}
+.field-note a {
+  color: var(--sage-deep);
+  border-bottom: 1px solid rgba(224, 138, 46, 0.35);
+  transition: color 0.2s, border-color 0.2s;
+}
+.field-note a:hover {
+  color: var(--hover);
+  border-color: var(--hover);
+}
+
 .intro__block {
   margin-bottom: 1.1rem;
 }

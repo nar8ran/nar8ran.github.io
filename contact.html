@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=202610071818" />
+    <link rel="stylesheet" href="style.css?v=202610071856" />
   </head>
   <body>
     <header class="site-header">
@@ -104,7 +104,22 @@
         <div class="field-row">
           <label for="message">お問い合わせ内容<span class="req">*</span></label>
           <div>
-            <textarea class="field" id="message" name="message" rows="5" placeholder="ご依頼・ご相談の内容をご記入ください。"></textarea>
+            <textarea
+              class="field"
+              id="message"
+              name="message"
+              rows="8"
+              placeholder="ご依頼・ご相談の内容をご記入ください。&#10;&#10;例）配信用のBGMをお願いしたいです。&#10;・ご依頼の種類：BGM／ジングル／Live2Dモデル／ロゴ／配信画面 など&#10;・イメージ：明るくポップ、ピアノ中心&#10;・使用用途：雑談配信のBGM&#10;・参考：気になる楽曲やデザインのURL（下の欄でも大丈夫です）"
+            ></textarea>
+            <p class="field-note">
+              決まっていない項目は空欄でかまいません。「こういう雰囲気にしたい」だけでもご相談いただけます。<br />
+              ご依頼内容が固まっている場合は、<a
+                href="https://tsunagu.cloud/users/nar8ran"
+                target="_blank"
+                rel="noreferrer"
+                >つなぐ</a
+              >に項目ごとの依頼テンプレートをご用意しています。
+            </p>
             <p class="field-error is-hidden" data-error-for="message"></p>
           </div>
         </div>
@@ -160,6 +175,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=202610071818"></script>
+    <script src="script.js?v=202610071856"></script>
   </body>
 </html>
