@@ -389,6 +389,10 @@ button {
   font-size: 0.78rem;
   color: var(--ink-soft);
 }
+/* 話のまとまりごとに、少し間をあける */
+.intro__block {
+  margin-bottom: 1.1rem;
+}
 .intro__links {
   margin-top: 1rem;
   font-size: 0.85rem;
