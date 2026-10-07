@@ -461,14 +461,16 @@ button {
   overflow: hidden;
 }
 /* 縦長の画像は、上（待機画面側）を見せる */
-.card__media--top img {
+.card__media.card__media--top img {
   object-position: top;
 }
 /* 一覧ものは切り取らず、全体を収める */
 .card__media--contain {
   background: var(--surface);
 }
-.card__media--contain img {
+/* --contain は「1つのクラス名」なので、.card__media と重ねて優先度を上げる
+   （そうしないと後ろにある .card__media img の cover に負けて切り取られる） */
+.card__media.card__media--contain img {
   object-fit: contain;
   padding: 0.5rem;
 }
