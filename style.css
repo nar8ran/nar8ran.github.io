@@ -464,7 +464,8 @@ button {
 .card__media--top img {
   object-position: top;
 }
-.card__media--top a {
+.card__media--top a,
+.card__media--link a {
   display: block;
   position: absolute;
   inset: 0;
