@@ -460,6 +460,15 @@ button {
   aspect-ratio: 16 / 9;
   overflow: hidden;
 }
+/* 縦長の画像は、上（待機画面側）を見せる */
+.card__media--top img {
+  object-position: top;
+}
+.card__media--top a {
+  display: block;
+  position: absolute;
+  inset: 0;
+}
 .card__media img,
 .card__media video,
 .card__media iframe,
