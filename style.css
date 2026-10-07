@@ -413,6 +413,89 @@ button {
   }
 }
 
+/* ---------- About：pickup（1ジャンル1点を大きく見せる） ---------- */
+.pickup-section {
+  margin-top: 6rem;
+}
+.pickup {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.pickup__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  color: var(--ink);
+}
+@media (min-width: 768px) {
+  .pickup__item {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2.5rem;
+  }
+  /* 2番目は左右を入れ替えて、流れに変化をつける */
+  .pickup__item:nth-child(even) .pickup__media {
+    order: 2;
+  }
+}
+.pickup__media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+.pickup__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.pickup__media.pickup__media--top img {
+  object-position: top;
+}
+.pickup__item:hover .pickup__media img {
+  transform: scale(1.04);
+}
+.pickup__label {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.pickup__item:hover .pickup__label {
+  color: var(--hover);
+}
+.pickup__text {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.9;
+  color: rgba(64, 56, 47, 0.85);
+}
+.pickup__more {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--sage-deep);
+  transition: color 0.2s;
+}
+.pickup__more::after {
+  content: " →";
+  transition: margin-left 0.2s;
+}
+.pickup__item:hover .pickup__more {
+  color: var(--hover);
+}
+.pickup__item:hover .pickup__more::after {
+  margin-left: 0.25rem;
+}
+
 .section-title {
   display: flex;
   align-items: flex-end;
