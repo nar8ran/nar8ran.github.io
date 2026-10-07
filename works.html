@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=202610071522" />
+    <link rel="stylesheet" href="style.css?v=202610071532" />
   </head>
   <body>
     <header class="site-header">
@@ -466,6 +466,18 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
+
+          <article class="card" data-category="other">
+            <div class="card__media card__media--link">
+              <a href="images/illust-tanyao.jpg" target="_blank" rel="noreferrer">
+                <img src="images/illust-tanyao.jpg" alt="歌ってみた用イラスト" loading="lazy" />
+              </a>
+            </div>
+            <div class="card__meta">
+              <p class="card__title">歌ってみた用イラスト</p>
+              <span class="card__cat">Illustration</span>
+            </div>
+          </article>
         </div>
 
         <p class="empty is-hidden" id="works-empty">
@@ -490,12 +502,12 @@
       </div>
     </footer>
 
-    <!-- 動画拡大モーダル（クリックで表示・操作ボタン付き） -->
-    <div class="modal" id="video-modal" hidden>
-      <button class="modal__close" id="modal-close" aria-label="閉じる">×</button>
-      <video class="modal__video" id="modal-video" controls playsinline></video>
+    <!-- 画像拡大モーダル（すりガラスの上に大きく表示） -->
+    <div class="modal" id="image-modal" hidden>
+      <button class="modal__close" id="image-modal-close" aria-label="閉じる">×</button>
+      <img class="modal__image" id="modal-image" src="" alt="" />
     </div>
 
-    <script src="script.js?v=202610071522"></script>
+    <script src="script.js?v=202610071532"></script>
   </body>
 </html>

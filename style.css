@@ -1098,6 +1098,7 @@ textarea.field {
 .modal[hidden] {
   display: none;
 }
+.modal__image,
 .modal__video {
   max-width: min(92vw, 1100px);
   max-height: 85vh;
@@ -1110,6 +1111,13 @@ textarea.field {
     opacity 0.45s ease,
     transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
+.modal__image {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  background: var(--surface);
+}
+.modal.is-open .modal__image,
 .modal.is-open .modal__video {
   opacity: 1;
   transform: scale(1);
