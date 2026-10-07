@@ -36,6 +36,7 @@
     tabs.addEventListener("click", (e) => {
       const btn = e.target.closest(".tab");
       if (!btn) return;
+      stopPlaying(); // 絞り込みで隠れた動画が鳴り続けないように
       applyFilter(btn.dataset.filter);
       // URLの末尾を書き換えて、そのまま共有できるようにする
       const hash = btn.dataset.filter === "all" ? " " : "#" + btn.dataset.filter;
@@ -76,11 +77,24 @@
     });
   }
 
-  /* ---- YouTubeサムネイル：クリックで再生 ---- */
+  /* ---- YouTubeサムネイル：クリックで再生（同時に鳴らないよう1本だけ） ---- */
+  let playingFrame = null; // いま再生中のプレーヤー
+  let playingBtn = null; //   その元のサムネイル
+
+  function stopPlaying() {
+    if (!playingFrame) return;
+    // プレーヤーを元のサムネイルに戻す＝音も止まる
+    playingFrame.replaceWith(playingBtn);
+    playingFrame = null;
+    playingBtn = null;
+  }
+
   document.querySelectorAll(".ytlite").forEach((btn) => {
     btn.addEventListener("click", () => {
       const id = btn.dataset.yt;
       if (!id) return;
+      stopPlaying(); // 先に再生中のものを止める
+
       const frame = document.createElement("iframe");
       frame.src =
         "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
@@ -89,6 +103,8 @@
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       frame.allowFullscreen = true;
       btn.replaceWith(frame);
+      playingFrame = frame;
+      playingBtn = btn;
     });
   });
 
