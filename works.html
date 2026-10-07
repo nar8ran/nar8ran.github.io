@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=202610071743" />
+    <link rel="stylesheet" href="style.css?v=202610071747" />
   </head>
   <body>
     <header class="site-header">
@@ -527,6 +527,24 @@
             </div>
           </article>
           <article class="card" data-category="other">
+            <div class="card__media card__media--link">
+              <!-- サムネは1枚目、拡大したときは2枚目（data-zoom）を表示する -->
+              <a
+                href="images/illust-tanyao.jpg"
+                data-zoom="images/illust-tanyao-02.jpg"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="images/illust-tanyao.jpg" alt="蛸壺みやび様 歌ってみた用イラスト" loading="lazy" />
+              </a>
+            </div>
+            <div class="card__meta">
+              <p class="card__title">歌ってみた用イラスト ／ 蛸壺みやび様</p>
+              <span class="card__cat">Illustration</span>
+            </div>
+          </article>
+
+          <article class="card" data-category="other">
             <div class="card__media card__media--contain">
               <a href="images/logo-salon-an.jpg" target="_blank" rel="noreferrer">
                 <img src="images/logo-salon-an.jpg" alt="ESTHETIC SALON AN様 ロゴデザイン・店頭サイン" loading="lazy" />
@@ -546,23 +564,6 @@
             <div class="card__meta">
               <p class="card__title">ロゴデザイン ／ AYANO様</p>
               <span class="card__cat">Design</span>
-            </div>
-          </article>
-          <article class="card" data-category="other">
-            <div class="card__media card__media--link">
-              <!-- サムネは1枚目、拡大したときは2枚目（data-zoom）を表示する -->
-              <a
-                href="images/illust-tanyao.jpg"
-                data-zoom="images/illust-tanyao-02.jpg"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img src="images/illust-tanyao.jpg" alt="蛸壺みやび様 歌ってみた用イラスト" loading="lazy" />
-              </a>
-            </div>
-            <div class="card__meta">
-              <p class="card__title">歌ってみた用イラスト ／ 蛸壺みやび様</p>
-              <span class="card__cat">Illustration</span>
             </div>
           </article>
         </div>
@@ -595,6 +596,6 @@
       <div class="modal__stack" id="modal-stack"></div>
     </div>
 
-    <script src="script.js?v=202610071743"></script>
+    <script src="script.js?v=202610071747"></script>
   </body>
 </html>
