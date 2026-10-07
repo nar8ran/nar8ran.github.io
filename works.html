@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=202610071738" />
+    <link rel="stylesheet" href="style.css?v=202610071743" />
   </head>
   <body>
     <header class="site-header">
@@ -39,8 +39,8 @@
         <!-- カテゴリ切り替え（JSで絞り込み） -->
         <div class="tabs" id="tabs">
           <button class="tab active" data-filter="all">All</button>
-          <button class="tab" data-filter="live2d">Live2D</button>
           <button class="tab" data-filter="music">Music</button>
+          <button class="tab" data-filter="live2d">Live2D</button>
           <button class="tab" data-filter="other">Other Works</button>
         </div>
 
@@ -65,94 +65,7 @@
           <img src="images/xxx.jpg" alt="作品名" /> に置き換えればOKです。
         -->
         <div class="grid-3" id="works-grid">
-          <article class="card" data-category="live2d">
-            <div class="card__media">
-              <button class="ytlite" type="button" data-yt="E3qz4unM4Dc" aria-label="蛸壺みやび様 アイドル衣装 Live2Dモデル を再生">
-                <img src="https://i.ytimg.com/vi/E3qz4unM4Dc/hqdefault.jpg" alt="" loading="lazy" />
-                <span class="ytlite__play" aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="card__meta">
-              <p class="card__title">蛸壺みやび様 アイドル衣装</p>
-              <span class="card__cat">Live2D</span>
-            </div>
-          </article>
-          <article class="card" data-category="live2d">
-            <div class="card__media">
-              <button class="ytlite" type="button" data-yt="fuJWtannCt0" aria-label="蛸壺みやび様 夏衣装 Live2Dモデル を再生">
-                <img src="https://i.ytimg.com/vi/fuJWtannCt0/hqdefault.jpg" alt="" loading="lazy" />
-                <span class="ytlite__play" aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="card__meta">
-              <p class="card__title">蛸壺みやび様 夏衣装</p>
-              <span class="card__cat">Live2D</span>
-            </div>
-          </article>
-          <article class="card" data-category="live2d">
-            <div class="card__media">
-              <button class="ytlite" type="button" data-yt="0f_KRLrzrqk" aria-label="蛸壺みやび様 ケモノのすがた Live2Dモデル を再生">
-                <img src="https://i.ytimg.com/vi/0f_KRLrzrqk/hqdefault.jpg" alt="" loading="lazy" />
-                <span class="ytlite__play" aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="card__meta">
-              <p class="card__title">蛸壺みやび様 ケモノのすがた</p>
-              <span class="card__cat">Live2D</span>
-            </div>
-          </article>
-          <article class="card" data-category="live2d">
-            <div class="card__media">
-              <button class="ytlite" type="button" data-yt="cxGXK4LDjQ8" aria-label="CHIHAYA様 Live2Dモデル を再生">
-                <img src="https://i.ytimg.com/vi/cxGXK4LDjQ8/hqdefault.jpg" alt="" loading="lazy" />
-                <span class="ytlite__play" aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="card__meta">
-              <p class="card__title">CHIHAYA様 Live2Dモデル</p>
-              <span class="card__cat">Live2D</span>
-            </div>
-          </article>
-          <article class="card" data-category="live2d">
-            <div class="card__media">
-              <button class="ytlite" type="button" data-yt="x1kDiykGFco" aria-label="なにぬね ののの様 Live2Dモデル を再生">
-                <img src="https://i.ytimg.com/vi/x1kDiykGFco/hqdefault.jpg" alt="" loading="lazy" />
-                <span class="ytlite__play" aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="card__meta">
-              <p class="card__title">なにぬね ののの様 Live2Dモデル</p>
-              <span class="card__cat">Live2D</span>
-            </div>
-          </article>
-          <article class="card" data-category="live2d">
-            <div class="card__media">
-              <button class="ytlite" type="button" data-yt="MwsAKu2ghVo" aria-label="ソウ・シロート様 Live2Dアニメーション を再生">
-                <img src="https://i.ytimg.com/vi/MwsAKu2ghVo/hqdefault.jpg" alt="" loading="lazy" />
-                <span class="ytlite__play" aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="card__meta">
-              <p class="card__title">ソウ・シロート様 Live2Dアニメーション</p>
-              <span class="card__cat">Animation</span>
-            </div>
-          </article>
-          <article class="card" data-category="live2d">
-            <div class="card__media">
-              <button class="ytlite" type="button" data-yt="N_lcqgrdNtQ" aria-label="鮭乃むすび様 Live2Dアニメーション を再生">
-                <img src="https://i.ytimg.com/vi/N_lcqgrdNtQ/hqdefault.jpg" alt="" loading="lazy" />
-                <span class="ytlite__play" aria-hidden="true"></span>
-              </button>
-            </div>
-            <div class="card__meta">
-              <p class="card__title">鮭乃むすび様 Live2Dアニメーション</p>
-              <span class="card__cat">Animation</span>
-            </div>
-          </article>
-
-          <!-- ===== 音楽制作（YouTube 埋め込み） =====
-               動画を追加するときは iframe の src の最後（動画ID）を差し替えてください。
-               例）https://www.youtube-nocookie.com/embed/【動画ID】 -->
+          <!-- 楽曲（BGM・ジングル） -->
           <article class="card" data-category="music">
             <div class="card__media">
               <button class="ytlite" type="button" data-yt="hlm5HIlk3f0" aria-label="ピックアップ！イメージBGM制作事例① を再生">
@@ -394,7 +307,93 @@
             </div>
           </article>
 
-          <!-- Other Works：配信画面デザイン。画像をクリックすると全体が開きます -->
+          <!-- Live2Dモデル・アニメーション -->
+          <article class="card" data-category="live2d">
+            <div class="card__media">
+              <button class="ytlite" type="button" data-yt="E3qz4unM4Dc" aria-label="蛸壺みやび様 アイドル衣装 Live2Dモデル を再生">
+                <img src="https://i.ytimg.com/vi/E3qz4unM4Dc/hqdefault.jpg" alt="" loading="lazy" />
+                <span class="ytlite__play" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="card__meta">
+              <p class="card__title">蛸壺みやび様 アイドル衣装</p>
+              <span class="card__cat">Live2D</span>
+            </div>
+          </article>
+          <article class="card" data-category="live2d">
+            <div class="card__media">
+              <button class="ytlite" type="button" data-yt="fuJWtannCt0" aria-label="蛸壺みやび様 夏衣装 Live2Dモデル を再生">
+                <img src="https://i.ytimg.com/vi/fuJWtannCt0/hqdefault.jpg" alt="" loading="lazy" />
+                <span class="ytlite__play" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="card__meta">
+              <p class="card__title">蛸壺みやび様 夏衣装</p>
+              <span class="card__cat">Live2D</span>
+            </div>
+          </article>
+          <article class="card" data-category="live2d">
+            <div class="card__media">
+              <button class="ytlite" type="button" data-yt="0f_KRLrzrqk" aria-label="蛸壺みやび様 ケモノのすがた Live2Dモデル を再生">
+                <img src="https://i.ytimg.com/vi/0f_KRLrzrqk/hqdefault.jpg" alt="" loading="lazy" />
+                <span class="ytlite__play" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="card__meta">
+              <p class="card__title">蛸壺みやび様 ケモノのすがた</p>
+              <span class="card__cat">Live2D</span>
+            </div>
+          </article>
+          <article class="card" data-category="live2d">
+            <div class="card__media">
+              <button class="ytlite" type="button" data-yt="cxGXK4LDjQ8" aria-label="CHIHAYA様 Live2Dモデル を再生">
+                <img src="https://i.ytimg.com/vi/cxGXK4LDjQ8/hqdefault.jpg" alt="" loading="lazy" />
+                <span class="ytlite__play" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="card__meta">
+              <p class="card__title">CHIHAYA様 Live2Dモデル</p>
+              <span class="card__cat">Live2D</span>
+            </div>
+          </article>
+          <article class="card" data-category="live2d">
+            <div class="card__media">
+              <button class="ytlite" type="button" data-yt="x1kDiykGFco" aria-label="なにぬね ののの様 Live2Dモデル を再生">
+                <img src="https://i.ytimg.com/vi/x1kDiykGFco/hqdefault.jpg" alt="" loading="lazy" />
+                <span class="ytlite__play" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="card__meta">
+              <p class="card__title">なにぬね ののの様 Live2Dモデル</p>
+              <span class="card__cat">Live2D</span>
+            </div>
+          </article>
+          <article class="card" data-category="live2d">
+            <div class="card__media">
+              <button class="ytlite" type="button" data-yt="MwsAKu2ghVo" aria-label="ソウ・シロート様 Live2Dアニメーション を再生">
+                <img src="https://i.ytimg.com/vi/MwsAKu2ghVo/hqdefault.jpg" alt="" loading="lazy" />
+                <span class="ytlite__play" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="card__meta">
+              <p class="card__title">ソウ・シロート様 Live2Dアニメーション</p>
+              <span class="card__cat">Animation</span>
+            </div>
+          </article>
+          <article class="card" data-category="live2d">
+            <div class="card__media">
+              <button class="ytlite" type="button" data-yt="N_lcqgrdNtQ" aria-label="鮭乃むすび様 Live2Dアニメーション を再生">
+                <img src="https://i.ytimg.com/vi/N_lcqgrdNtQ/hqdefault.jpg" alt="" loading="lazy" />
+                <span class="ytlite__play" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="card__meta">
+              <p class="card__title">鮭乃むすび様 Live2Dアニメーション</p>
+              <span class="card__cat">Animation</span>
+            </div>
+          </article>
+
+          <!-- デザイン・イラスト -->
           <article class="card" data-category="other">
             <div class="card__media card__media--top">
               <a href="images/stream-iroha.jpg" target="_blank" rel="noreferrer">
@@ -406,7 +405,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
           <article class="card" data-category="other">
             <div class="card__media card__media--top">
               <a href="images/stream-rye.jpg" target="_blank" rel="noreferrer">
@@ -418,7 +416,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
           <article class="card" data-category="other">
             <div class="card__media card__media--top">
               <a href="images/stream-miyabi.jpg" target="_blank" rel="noreferrer">
@@ -430,7 +427,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
           <article class="card" data-category="other">
             <div class="card__media card__media--top">
               <a href="images/stream-kaito.jpg" target="_blank" rel="noreferrer">
@@ -442,7 +438,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
           <article class="card" data-category="other">
             <div class="card__media card__media--link">
               <a href="images/banner-rye.jpg" target="_blank" rel="noreferrer">
@@ -454,9 +449,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
-
-          <!-- ワンポイント違いの2種。拡大すると縦に並んで両方見られます -->
           <article class="card" data-category="other">
             <div class="card__media card__media--contain">
               <a href="images/logo-miyabi-a.png" target="_blank" rel="noreferrer">
@@ -468,7 +460,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
           <article class="card" data-category="other">
             <div class="card__media card__media--contain">
               <a href="images/logo-miyabi-b.png" target="_blank" rel="noreferrer">
@@ -480,8 +471,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
-
           <article class="card" data-category="other">
             <div class="card__media card__media--contain">
               <a href="images/logo-iroha-a.png" target="_blank" rel="noreferrer">
@@ -493,7 +482,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
           <article class="card" data-category="other">
             <div class="card__media card__media--contain">
               <a href="images/logo-iroha-b.png" target="_blank" rel="noreferrer">
@@ -505,8 +493,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
-
           <article class="card" data-category="other">
             <div class="card__media card__media--contain">
               <a href="images/logo-rye.png" target="_blank" rel="noreferrer">
@@ -518,7 +504,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
           <article class="card" data-category="other">
             <div class="card__media card__media--contain">
               <a href="images/logo-nonono.png" target="_blank" rel="noreferrer">
@@ -530,7 +515,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
           <article class="card" data-category="other">
             <div class="card__media card__media--contain">
               <a href="images/logo-atle.png" target="_blank" rel="noreferrer">
@@ -542,7 +526,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
           <article class="card" data-category="other">
             <div class="card__media card__media--contain">
               <a href="images/logo-salon-an.jpg" target="_blank" rel="noreferrer">
@@ -554,7 +537,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
           <article class="card" data-category="other">
             <div class="card__media card__media--contain">
               <a href="images/logo-salon-ayano.jpg" target="_blank" rel="noreferrer">
@@ -566,7 +548,6 @@
               <span class="card__cat">Design</span>
             </div>
           </article>
-
           <article class="card" data-category="other">
             <div class="card__media card__media--link">
               <!-- サムネは1枚目、拡大したときは2枚目（data-zoom）を表示する -->
@@ -614,6 +595,6 @@
       <div class="modal__stack" id="modal-stack"></div>
     </div>
 
-    <script src="script.js?v=202610071738"></script>
+    <script src="script.js?v=202610071743"></script>
   </body>
 </html>
