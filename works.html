@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=202610071535" />
+    <link rel="stylesheet" href="style.css?v=202610071548" />
   </head>
   <body>
     <header class="site-header">
@@ -467,6 +467,41 @@
             </div>
           </article>
 
+          <!-- ワンポイント違いの2種。拡大すると縦に並んで両方見られます -->
+          <article class="card" data-category="other">
+            <div class="card__media card__media--contain">
+              <a
+                href="images/logo-miyabi-a.png"
+                data-zoom="images/logo-miyabi-a.png, images/logo-miyabi-b.png"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="images/logo-miyabi-a.png" alt="蛸壺みやび様 ロゴデザイン" loading="lazy" />
+              </a>
+            </div>
+            <div class="card__meta">
+              <p class="card__title">ロゴデザイン ／ 蛸壺みやび様</p>
+              <span class="card__cat">Design</span>
+            </div>
+          </article>
+
+          <article class="card" data-category="other">
+            <div class="card__media card__media--contain">
+              <a
+                href="images/logo-iroha-a.png"
+                data-zoom="images/logo-iroha-a.png, images/logo-iroha-b.png"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src="images/logo-iroha-a.png" alt="常盤いろは様 ロゴデザイン" loading="lazy" />
+              </a>
+            </div>
+            <div class="card__meta">
+              <p class="card__title">ロゴデザイン ／ 常盤いろは様</p>
+              <span class="card__cat">Design</span>
+            </div>
+          </article>
+
           <article class="card" data-category="other">
             <div class="card__media card__media--link">
               <!-- サムネは1枚目、拡大したときは2枚目（data-zoom）を表示する -->
@@ -508,12 +543,12 @@
       </div>
     </footer>
 
-    <!-- 画像拡大モーダル（すりガラスの上に大きく表示） -->
+    <!-- 画像拡大モーダル（すりガラスの上に大きく表示・複数枚は縦に並ぶ） -->
     <div class="modal" id="image-modal" hidden>
       <button class="modal__close" id="image-modal-close" aria-label="閉じる">×</button>
-      <img class="modal__image" id="modal-image" src="" alt="" />
+      <div class="modal__stack" id="modal-stack"></div>
     </div>
 
-    <script src="script.js?v=202610071535"></script>
+    <script src="script.js?v=202610071548"></script>
   </body>
 </html>

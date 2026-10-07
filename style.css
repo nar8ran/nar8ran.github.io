@@ -1098,7 +1098,7 @@ textarea.field {
 .modal[hidden] {
   display: none;
 }
-.modal__image,
+.modal__stack,
 .modal__video {
   max-width: min(92vw, 1100px);
   max-height: 85vh;
@@ -1111,13 +1111,24 @@ textarea.field {
     opacity 0.45s ease,
     transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.modal__image {
-  width: auto;
+/* 複数枚のときは縦に並べて、はみ出た分はスクロールで見る */
+.modal__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+  background: var(--surface);
+  padding: 0.75rem;
+  -webkit-overflow-scrolling: touch;
+}
+.modal__stack img {
+  display: block;
+  width: 100%;
   height: auto;
-  object-fit: contain;
+  border-radius: 0.5rem;
   background: var(--surface);
 }
-.modal.is-open .modal__image,
+.modal.is-open .modal__stack,
 .modal.is-open .modal__video {
   opacity: 1;
   transform: scale(1);

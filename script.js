@@ -186,18 +186,18 @@
 
   /* ---- Works：画像カードをクリックしたら、すりガラスの上に拡大表示 ---- */
   const modal = document.getElementById("image-modal");
-  const modalImage = document.getElementById("modal-image");
+  const modalStack = document.getElementById("modal-stack");
   const modalClose = document.getElementById("image-modal-close");
   const imageLinks = document.querySelectorAll(".card__media a[href$='.jpg'], .card__media a[href$='.png']");
 
-  if (modal && modalImage && imageLinks.length) {
+  if (modal && modalStack && imageLinks.length) {
     const closeModal = () => {
       modal.classList.remove("is-open");
       document.body.style.overflow = "";
       // ふわっと消えきってから隠す
       window.setTimeout(() => {
         modal.hidden = true;
-        modalImage.removeAttribute("src");
+        modalStack.innerHTML = "";
       }, 500);
     };
 
@@ -208,9 +208,21 @@
         e.preventDefault();
 
         const img = link.querySelector("img");
-        // data-zoom があれば、拡大時はそちらの画像を見せる
-        modalImage.src = link.dataset.zoom || link.getAttribute("href");
-        modalImage.alt = img ? img.alt : "";
+        // data-zoom があれば拡大時はそちらを表示。カンマ区切りで複数枚を縦に並べる
+        const sources = (link.dataset.zoom || link.getAttribute("href"))
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean);
+
+        modalStack.innerHTML = "";
+        modalStack.scrollTop = 0;
+        sources.forEach((src) => {
+          const el = document.createElement("img");
+          el.src = src;
+          el.alt = img ? img.alt : "";
+          modalStack.appendChild(el);
+        });
+
         modal.hidden = false;
         document.body.style.overflow = "hidden";
         // 次のフレームで .is-open を付けてふわっと出す
