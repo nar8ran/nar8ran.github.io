@@ -116,13 +116,22 @@ button {
   }
 }
 .brand {
-  font-family: var(--serif);
-  font-size: 1.125rem;
-  letter-spacing: 0.02em;
-  transition: opacity 0.2s;
+  display: inline-flex;
+  align-items: center;
 }
-.brand:hover {
-  color: var(--hover);
+/* ヘッダー・フッターの「なろ」もロゴで表示する */
+.brand__logo {
+  display: block;
+  height: 1.45rem;
+  width: auto;
+  fill: var(--ink);
+  transition: fill 0.2s;
+}
+.brand:hover .brand__logo {
+  fill: var(--hover);
+}
+.brand__logo--footer {
+  height: 1.6rem;
 }
 .site-nav {
   display: flex;
@@ -172,8 +181,7 @@ button {
   }
 }
 .site-footer__name {
-  font-family: var(--serif);
-  font-size: 1.25rem;
+  line-height: 1;
 }
 .site-footer__role {
   margin-top: 0.25rem;
