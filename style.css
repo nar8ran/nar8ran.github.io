@@ -1122,13 +1122,16 @@ textarea.field {
     padding: 4rem 3.5rem;
   }
 }
-.home-brand__name {
-  /* Multi Creator と同じ丸ゴシックに揃える（明朝だと浮くため） */
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 1.5rem;
-  letter-spacing: 0.08em;
-  line-height: 1.2;
+/* 「なろ」はロゴ画像（トップ画像のWelcomeと同じ字体） */
+.home-brand__logo {
+  display: block;
+  height: 1.9rem;
+  width: auto;
+  fill: var(--ink);
+  transition: fill 0.2s;
+}
+.home-brand a:hover .home-brand__logo {
+  fill: var(--hover);
 }
 .home-brand__role {
   margin-top: 0.4rem;
