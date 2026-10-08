@@ -1123,8 +1123,11 @@ textarea.field {
   }
 }
 .home-brand__name {
-  font-family: var(--serif);
+  /* Multi Creator と同じ丸ゴシックに揃える（明朝だと浮くため） */
+  font-family: var(--sans);
+  font-weight: 500;
   font-size: 1.5rem;
+  letter-spacing: 0.08em;
   line-height: 1.2;
 }
 .home-brand__role {
