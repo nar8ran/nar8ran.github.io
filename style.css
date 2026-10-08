@@ -125,9 +125,14 @@ button {
   height: 1.45rem;
   width: auto;
   fill: var(--ink);
-  transition: fill 0.2s;
+  transition: fill 0.2s, opacity 0.2s;
+}
+/* ヘッダーは太めのロゴが主張しすぎるので、少し薄くする（フッターは等倍のまま） */
+.brand .brand__logo {
+  opacity: 0.68;
 }
 .brand:hover .brand__logo {
+  opacity: 1;
   fill: var(--hover);
 }
 .brand__logo--footer {
